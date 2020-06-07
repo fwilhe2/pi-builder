@@ -1,0 +1,15 @@
+name: CI
+on:
+  push:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run a multi-line script
+      run: |
+        git clone https://github.com/RPi-Distro/pi-gen
+        cd pi-gen
+        echo "IMG_NAME=my_name" > config
+        ./build-docker.sh
+        
