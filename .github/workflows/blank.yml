@@ -13,3 +13,8 @@ jobs:
         echo "IMG_NAME=my_name" > config
         ./build-docker.sh
         
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: my-raspi-image
+        path: pi-gen/deploy
